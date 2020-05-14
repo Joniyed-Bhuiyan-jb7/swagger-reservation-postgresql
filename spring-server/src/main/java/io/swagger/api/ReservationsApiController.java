@@ -39,7 +39,7 @@ public class ReservationsApiController implements ReservationsApi {
         this.request = request;
     }
 
-    @PostMapping
+    @PostMapping("/reservations")
     public ResponseEntity<String> addReservation(@ApiParam(value = "Reservation object that needs to be added to the DB" ,required=true )  @Valid @RequestBody Reservation reservation) {
         try {
             Reservation reservation1 = new Reservation(reservation.getId(),reservation.getName(),reservation.getFromDate(),reservation.getToDate(),reservation.getRoom());
